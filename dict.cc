@@ -6,7 +6,7 @@ Dict::Dict() {
 Dict::~Dict() {
 }
 
-bool Dict::Insert(int key, Value* val, bool overWrite=true) {
+bool Dict::Put(int key, Value* val, bool overWrite=true) {
 	if (!overWrite) {
 		if (IsPresent(key))
 			return false;
@@ -23,4 +23,11 @@ bool Dict::IsPresent(int checkKey) {
 		return true;
 	else
 		return false;
+}
+
+Value* Dict::Get(int key){
+	if (IsPresent(key))
+		return hashmap_[key];
+	else
+		return NULL;
 }

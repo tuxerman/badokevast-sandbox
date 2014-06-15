@@ -48,7 +48,7 @@ void dictrun(int times) {
 
 		// insert into kvdict
 		Value *newVal = new Value(valueBuffer);
-		kvdict.Insert(newKey, newVal, false);
+		kvdict.Put(newKey, newVal, false);
 	}
 
 	cout << "Finished inserting, let's try other operations\n";
@@ -60,7 +60,7 @@ void dictrun(int times) {
 	cout << "Deletion" << endl;
 	kvdict.Delete(1008);
 	kvdict.Delete(109999);
-	cout << kvdict.IsPresent(1008) << endl;
+	cout << kvdict.Get(1005)->getValue() << endl;
 }
 
 int main()

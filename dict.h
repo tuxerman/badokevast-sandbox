@@ -9,9 +9,10 @@ public:
 	Dict();
 	~Dict();
 
-	bool Insert(int, Value*, bool);
+	bool Put(int, Value*, bool);
 	void Delete(int);
 	bool IsPresent(int);
+	Value* Get(int key);
 
 private:
 	std::map<int, Value*> hashmap_;
